@@ -3,8 +3,8 @@
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
 /[Ll]ibrary/
-/Prototype 1/[Tt]emp/
-/Challenge 1/[Tt]emp/
+/Unit 1/Prototype 1/[Tt]emp
+/Unit 1/Challenge 1/[Tt]emp
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
