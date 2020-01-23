@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveForward : MonoBehaviour
 {
+    // Speed of the pizza
     public float speed = 40.0f;
 
     // Start is called before the first frame update
@@ -15,6 +16,7 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Making the pizza fly
         transform.Translate(Vector3.forward * Time.deltaTime * speed);   
     }
 }
