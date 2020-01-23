@@ -19,9 +19,14 @@ public class SpawnManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.S)) // When S is pressed ->
         {
-            int animalIndex = Random.Range(0, animalPrefabs.Length); // animalIndex is variable to store random index from 0 to 3;
-            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ); // spawnPos is Vector3 variable which stores the random range and the position of the enemies
-            Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation); // -> instanitiate random enemy from the array 
+            SpawnRandomAnimal(); // Call SpawnRandomAnimal method
         }
+    }
+
+    void SpawnRandomAnimal()
+    {
+        int animalIndex = Random.Range(0, animalPrefabs.Length); // animalIndex is variable to store random index from 0 to 3;
+        Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ); // spawnPos is Vector3 variable which stores the random range and the position of the enemies
+        Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation); // -> instanitiate random enemy from the array
     }
 }
