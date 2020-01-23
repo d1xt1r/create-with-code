@@ -35,9 +35,10 @@ public class PlayerController : MonoBehaviour
         // Making the player move by multipying the necessary things
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
+        // When you press the spacebar 
         if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            // Launch a projectile from the player
+        {   //it will instantiate a new copy of the projectile from the position of the player
+            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
         }
     }
 }
