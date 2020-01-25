@@ -22,11 +22,13 @@ public class SpawnManagerX : MonoBehaviour
     // Spawn random ball at random x position at top of play area
     void SpawnRandomBall ()
     {
+        // Question 6 - Generate a random number  from the index, so you can spawn all types of balls
+        int ballIndex = Random.Range(0, ballPrefabs.Length);
+
         // Generate random ball index and random spawn position
         Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
 
-        // instantiate ball at random spawn location
-        int ballIndex = Random.Range(0, ballPrefabs.Length); // Store a random number from the index as integer, so I can use it in the Instantiate method.
+        // Instantiate ball at random spawn location
         Instantiate(ballPrefabs[ballIndex], spawnPos, ballPrefabs[0].transform.rotation);
     }
 
