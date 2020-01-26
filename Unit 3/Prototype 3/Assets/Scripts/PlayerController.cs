@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>(); // Get the Rigidbody component of the player
+        playerRb = GetComponent<Rigidbody>(); // Get the R igidbody component of the player
         Physics.gravity *= gravityModifier; // Modifying the default gravity so jumps can feel more natural
     }
 
