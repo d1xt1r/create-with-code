@@ -8,11 +8,12 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10;
     public float gravityModifier = 2;
     public bool isOnGround = true;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>(); // Get the R igidbody component of the player
+        playerRb = GetComponent<Rigidbody>(); // Get the Rigidbody component of the player
         Physics.gravity *= gravityModifier; // Modifying the default gravity so jumps can feel more natural
     }
 
@@ -30,6 +31,14 @@ public class PlayerController : MonoBehaviour
     // Reset isOnGround to true, when the player touches the groud, so you can jump again
     private void OnCollisionEnter(Collision collision)
     {
-        isOnGround = true;
+        if (collision.gameObject.CompareTag("Ground")) // If you are colliding with the ground, you can jump again
+        {
+            isOnGround = true;
+        } 
+        else if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Debug.Log("Game Over!"); // If you are colliding with the obstacles, your game is over!
+            gameOver = true;
+        }
     }
 }
