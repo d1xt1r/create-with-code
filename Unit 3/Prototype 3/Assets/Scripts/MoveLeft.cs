@@ -17,13 +17,9 @@ public class MoveLeft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerControllerScript.gameOver == false) // If gameOver (from the PlayerController script) condition is false continue move the obstacles in the left direction
+        if (PlayerControllerScript.gameOver == false) // If gameOver (from the PlayerController script) condition is false continue move the obstacles in the left direction (if true it will stop moving them)
         {
             transform.Translate(Vector3.left * Time.deltaTime * speed); // Moves the obsticle in left direction 
-        }
-        else // if gameOver (from the PlayerController script) condition is true ->
-        {
-            transform.Translate(Vector3.zero); // -> Stop moving the obsticle in left direction  
         }
     }
 }
